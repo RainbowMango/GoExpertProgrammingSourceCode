@@ -46,6 +46,15 @@ func AfterFuncDemo() {
     time.Sleep(2 * time.Second) // 等待协程退出
 }
 
+func TickerDemo() {
+    ticker := time.NewTicker(1 * time.Second)
+    defer ticker.Stop()
+
+    for range ticker.C {
+        log.Println("Ticker tick.")
+    }
+}
+
 func RunTimerPackage() {
     channel := make(chan string)
 
@@ -53,4 +62,6 @@ func RunTimerPackage() {
     DelayFunction()
     AfterDemo()
     AfterFuncDemo()
+
+    TickerDemo()
 }
