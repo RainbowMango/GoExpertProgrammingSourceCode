@@ -46,12 +46,57 @@ func AfterFuncDemo() {
     time.Sleep(2 * time.Second) // 等待协程退出
 }
 
+// TickerDemo 用于演示ticker基础用法
 func TickerDemo() {
     ticker := time.NewTicker(1 * time.Second)
     defer ticker.Stop()
 
     for range ticker.C {
         log.Println("Ticker tick.")
+    }
+}
+
+func GetNewPassenger() string{
+    return "task"
+}
+
+func Launch([]string) {
+    return
+}
+
+// TickerLaunch用于演示ticker聚合任务用法
+func TickerLaunch() {
+    ticker := time.NewTicker(5 * time.Minute)
+    maxPassenger := 30                   // 每车最大装载人数
+    passengers := make([]string, 0, maxPassenger)
+
+    for {
+        passenger := GetNewPassenger() // 获取一个新乘客
+        if passenger != "" {
+            passengers = append(passengers, passenger)
+        } else {
+            time.Sleep(1 * time.Second)
+        }
+
+        select {
+        case <- ticker.C:               // 时间到，发车
+            Launch(passengers)
+            passengers = []string{}
+        default:
+            if len(passengers) >= maxPassenger {  // 时间没到，车已座满，发车
+                Launch(passengers)
+                passengers = []string{}
+            }
+        }
+    }
+}
+
+func WrongTicker() {
+    for {
+        select {
+        case <-time.Tick(1 * time.Second):
+            log.Printf("Resource leak!")
+        }
     }
 }
 
@@ -63,5 +108,7 @@ func RunTimerPackage() {
     AfterDemo()
     AfterFuncDemo()
 
-    TickerDemo()
+    //TickerDemo()
+
+    //WrongTicker()
 }
