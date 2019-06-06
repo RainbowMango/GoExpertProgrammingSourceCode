@@ -3,6 +3,7 @@ package main
 import (
     "string"
     "timer"
+    "sugar"
 )
 
 func GetFromMap() string {
@@ -17,5 +18,6 @@ func main() {
     GetFromMap()
     stringExample.RunStringPackage()
     timerExample.RunTimerPackage()
+    sugar.SugerPackage()
 }
 
