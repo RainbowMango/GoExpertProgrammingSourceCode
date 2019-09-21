@@ -1,23 +1,25 @@
 package main
 
 import (
-    "string"
-    "timer"
-    "sugar"
+	deferexample "defer"
+	"flag"
+	"string"
+	"sugar"
+	"timer"
 )
 
 func GetFromMap() string {
-    myMap := make(map[string]string, 10)
+	myMap := make(map[string]string, 10)
 
-    name := myMap["Horen"]
-
-    return name
+	name := myMap["Horen"]
+	flag.Args()
+	return name
 }
 
 func main() {
-    GetFromMap()
-    stringExample.RunStringPackage()
-    timerExample.RunTimerPackage()
-    sugar.SugerPackage()
+	deferexample.Dived(0)
+	GetFromMap()
+	stringExample.RunStringPackage()
+	timerExample.RunTimerPackage()
+	sugar.SugerPackage()
 }
-
