@@ -2,17 +2,15 @@ package append
 
 import (
 	"errors"
-	"golang.org/x/text/cases"
 	"os"
-	"strings"
 )
 
 func Validation() []error {
 	var errs []error
 
-	append(errs, errors.New("error 1"))
-	append(errs, errors.New("error 2"))
-	append(errs, errors.New("error 3"))
+	errs = append(errs, errors.New("error 1"))
+	errs = append(errs, errors.New("error 2"))
+	errs = append(errs, errors.New("error 3"))
 
 	return errs
 }
