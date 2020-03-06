@@ -1,26 +1,26 @@
 package gotest_test
 
 import (
-    "testing"
-    "gotest"
-    "time"
+	"gotest"
+	"testing"
+	"time"
 )
 
 func BenchmarkMakeSliceWithoutAlloc(b *testing.B) {
-    for i := 0; i < b.N; i++ {
-        gotest.MakeSliceWithoutAlloc()
-    }
+	for i := 0; i < b.N; i++ {
+		gotest.MakeSliceWithoutAlloc()
+	}
 }
 
 func BenchmarkMakeSliceWithPreAlloc(b *testing.B) {
-    for i := 0; i < b.N; i++ {
-        gotest.MakeSliceWithPreAlloc()
-    }
+	for i := 0; i < b.N; i++ {
+		gotest.MakeSliceWithPreAlloc()
+	}
 }
 
 func BenchmarkSetBytes(b *testing.B) {
-    b.SetBytes(1024 * 1024)
-    for i := 0; i < b.N; i++ {
-        time.Sleep(1 * time.Second) // 模拟待测函数
-    }
+	b.SetBytes(1024 * 1024)
+	for i := 0; i < b.N; i++ {
+		time.Sleep(1 * time.Second) // 模拟待测函数
+	}
 }
