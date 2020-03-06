@@ -24,3 +24,9 @@ func ExampleSliceCap() {
 	// OutPut:
 	// newSlice: [0 0 0]
 }
+
+func ExampleExtendSliceArray() {
+	ExtendSliceArray()
+	// OutPut:
+	// cap(b): 3
+}
