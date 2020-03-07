@@ -38,6 +38,6 @@ func SliceCap() {
 // extend slice expression(a[low, high, max])切取数组时，max用于限制新生成片的capacity。
 func ExtendSliceArray() {
 	a := [5]int{1, 2, 3, 4, 5}
-	b := a[:4:]
+	b := a[1:4:4]
 	fmt.Printf("cap(b): %d", cap(b)) // cap(b): 3
 }
