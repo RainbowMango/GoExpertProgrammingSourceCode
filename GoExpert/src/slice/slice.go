@@ -3,6 +3,7 @@ package slice
 import (
 	"fmt"
 	"reflect"
+	"time"
 )
 
 // simple slice expression(a[low, high]) 切取字符串时，生成的仍然为字符串
@@ -40,4 +41,9 @@ func ExtendSliceArray() {
 	a := [5]int{1, 2, 3, 4, 5}
 	b := a[1:4:4]
 	fmt.Printf("cap(b): %d", cap(b)) // cap(b): 3
+}
+
+type Info struct {
+	Version string    // version string
+	Time    time.Time // commit time
 }
