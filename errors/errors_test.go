@@ -22,6 +22,7 @@ if e, ok := err.(*NotFoundError); ok {
 其中“e.Name wasn't found” 错误，实际应该是“e.Name was found”
 
 修复该笔误的PR：https://github.com/golang/blog/pull/33
+更新：是笔者理解错了，`e.Name wasn't found`并不是指err中没有e.Name成员（从而不是NotFoundError），而是指e.Name的值没有找到。
 */
 
 func ExampleNotFoundError_Error() {
@@ -38,4 +39,14 @@ func ExampleNotFoundError_Error() {
 
 	// OutPut:
 	// err2 is a NotFoundError, e.Name=err2
+}
+
+// 内容为空的error也是异常。
+func ExampleEmptyError() {
+	err := errors.New("")
+	if err != nil {
+		fmt.Printf("empty error still is an error")
+	}
+	// OutPut:
+	// empty error still is an error
 }
