@@ -3,6 +3,7 @@ package errors
 import (
 	"errors"
 	"fmt"
+	"os"
 )
 
 type NotFoundError struct {
@@ -23,4 +24,10 @@ func MakeByErrorsNew() error {
 
 func MakeByFmtErrorf() error {
 	return fmt.Errorf("new error")
+}
+
+func AssertError(err error) {
+	if e, ok := err.(*os.PathError); ok {
+		fmt.Printf("it's an os.PathError, operation: %s, path: %s, msg: %v", e.Op, e.Path, e.Err)
+	}
 }

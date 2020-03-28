@@ -3,6 +3,7 @@ package errors
 import (
 	"errors"
 	"fmt"
+	"os"
 	"testing"
 )
 
@@ -70,4 +71,20 @@ func BenchmarkMakeByFmtErrorf(b *testing.B) {
 	for i := 0; i < b.N; i++ {
 		_ = MakeByFmtErrorf()
 	}
+}
+
+// go test ./errors -run=ExampleAssertError
+func ExampleAssertError() {
+	err1 := &os.PathError{
+		Op:   "write",
+		Path: "/root/demo.txt",
+		Err:  os.ErrPermission,
+	}
+	AssertError(err1)
+
+	err2 := fmt.Errorf("not an os.PathError")
+	AssertError(err2)
+
+	// Output:
+	// it's an os.PathError, operation: write, path: /root/demo.txt, msg: permission denied
 }
