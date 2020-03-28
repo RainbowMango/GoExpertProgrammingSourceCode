@@ -3,6 +3,7 @@ package errors
 import (
 	"errors"
 	"fmt"
+	"testing"
 )
 
 /*
@@ -49,4 +50,24 @@ func ExampleEmptyError() {
 	}
 	// OutPut:
 	// empty error still is an error
+}
+
+// errors.New() 性能测试
+// [root@ecs-d8b6 errors]# benchstat new.txt
+// name                time/op
+// MakeByErrorsNew-12  0.24ns ± 1%
+func BenchmarkMakeByErrorsNew(b *testing.B) {
+	for i := 0; i < b.N; i++ {
+		_ = MakeByErrorsNew()
+	}
+}
+
+// fmt.Errorf() 性能测试
+// [root@ecs-d8b6 errors]# benchstat old.txt
+// name                time/op
+// MakeByFmtErrorf-12  80.9ns ± 1%
+func BenchmarkMakeByFmtErrorf(b *testing.B) {
+	for i := 0; i < b.N; i++ {
+		_ = MakeByFmtErrorf()
+	}
 }
