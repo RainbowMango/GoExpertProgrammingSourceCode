@@ -88,3 +88,13 @@ func ExampleAssertError() {
 	// Output:
 	// it's an os.PathError, operation: write, path: /root/demo.txt, msg: permission denied
 }
+
+// go test ./errors -run=ExampleWriteFile
+func ExampleWriteFile() {
+	err := WriteFile("a.txt")
+	if err == os.ErrPermission {
+		fmt.Printf("permission denied")
+	}
+	// Output:
+	//
+}

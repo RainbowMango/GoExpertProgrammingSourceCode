@@ -30,4 +30,16 @@ func AssertError(err error) {
 	if e, ok := err.(*os.PathError); ok {
 		fmt.Printf("it's an os.PathError, operation: %s, path: %s, msg: %v", e.Op, e.Path, e.Err)
 	}
+
+	if e, ok := err.(*os.PathError); ok && e.Err == os.ErrPermission {
+		fmt.Printf("permission denied")
+	}
+}
+
+func WriteFile(fileName string) error {
+	if fileName == "a.txt" {
+		return fmt.Errorf("write file error: %v", os.ErrPermission)
+	}
+
+	return nil
 }
