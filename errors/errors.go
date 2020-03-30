@@ -28,11 +28,11 @@ func MakeByFmtErrorf() error {
 
 func AssertError(err error) {
 	if e, ok := err.(*os.PathError); ok {
-		fmt.Printf("it's an os.PathError, operation: %s, path: %s, msg: %v", e.Op, e.Path, e.Err)
+		fmt.Printf("it's an os.PathError, operation: %s, path: %s, msg: %v\n", e.Op, e.Path, e.Err)
 	}
 
 	if e, ok := err.(*os.PathError); ok && e.Err == os.ErrPermission {
-		fmt.Printf("permission denied")
+		fmt.Printf("permission denied\n")
 	}
 }
 

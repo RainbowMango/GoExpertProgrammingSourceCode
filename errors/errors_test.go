@@ -87,6 +87,7 @@ func ExampleAssertError() {
 
 	// Output:
 	// it's an os.PathError, operation: write, path: /root/demo.txt, msg: permission denied
+	// permission denied
 }
 
 // go test ./errors -run=ExampleWriteFile
