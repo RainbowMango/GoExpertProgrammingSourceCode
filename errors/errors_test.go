@@ -43,16 +43,6 @@ func ExampleNotFoundError_Error() {
 	// err2 is a NotFoundError, e.Name=err2
 }
 
-// 内容为空的error也是异常。
-func ExampleEmptyError() {
-	err := errors.New("")
-	if err != nil {
-		fmt.Printf("empty error still is an error")
-	}
-	// OutPut:
-	// empty error still is an error
-}
-
 // errors.New() 性能测试
 // [root@ecs-d8b6 errors]# benchstat new.txt
 // name                time/op
