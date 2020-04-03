@@ -76,3 +76,15 @@ func RecoverDemo5() {
 	ret := foo()
 	fmt.Println(ret)
 }
+
+// 考察点：panic(nil)时，recover()返回nil
+func RecoverDemo6() {
+	defer func() {
+		if err := recover(); err != nil {
+			fmt.Println("A")
+		}
+	}()
+
+	panic(nil)
+	fmt.Println("B")
+}

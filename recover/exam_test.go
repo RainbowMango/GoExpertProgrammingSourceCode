@@ -33,3 +33,9 @@ func ExampleRecoverDemo5() {
 	// Output:
 	// 0
 }
+
+func ExampleRecoverDemo6() {
+	RecoverDemo6()
+	// Output:
+	//
+}
