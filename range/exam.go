@@ -42,7 +42,7 @@ func PrintSlice() {
 	wg.Wait()
 }
 
-// 题目三：range nil channel
+// 题目三：range nil channel 永久阻塞
 func RangeNilChannel() {
 	var c chan string
 

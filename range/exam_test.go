@@ -26,12 +26,6 @@ func ExamplePrintSlice() {
 	// 3
 }
 
-func ExampleRangeChannel() {
-	// RangeNilChannel() Nil Channel会永入阻塞
-	// Output:
-	//
-}
-
 func ExampleRangeTimer() {
 	// RangeTimer() // 会阻塞到go test 超时
 	// Output:
