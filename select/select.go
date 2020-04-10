@@ -32,3 +32,13 @@ func SelectAssign(c chan string) {
 		fmt.Printf("2: received %s\n", d)
 	}
 }
+
+func SelectDefault() {
+	c := make(chan string)
+	select {
+	case <-c:
+		fmt.Printf("received\n")
+	default:
+		fmt.Printf("no data found in default\n")
+	}
+}

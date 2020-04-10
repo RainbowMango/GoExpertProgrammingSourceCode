@@ -48,3 +48,9 @@ func ExampleSelectAssign2() {
 	close(c)
 	SelectAssign(c)
 }
+
+func ExampleSelectDefault() {
+	SelectDefault()
+	// Output:
+	// no data found in default
+}
