@@ -26,3 +26,9 @@ func ExampleSelectExam4() {
 func ExampleSelectExam5() {
 	SelectExam5()
 }
+
+func ExampleSelectExam6() {
+	SelectExam6()
+	// Output:
+	// default
+}

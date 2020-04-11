@@ -1,6 +1,8 @@
 package _select
 
-import "fmt"
+import (
+	"fmt"
+)
 
 /*
 下面函数输出什么？
@@ -95,4 +97,22 @@ func SelectExam4() {
 */
 func SelectExam5() {
 	select {}
+}
+
+/*
+关于下面函数的描述，正确的是？
+单选：
+- A： 函数会因为写值为nil的管道而被阻塞
+- B： 函数会因为写值为nil的管道而panic
+- C： 函数会从default出口返回
+- D： 编译错误，值为nil的管道不可以写
+*/
+func SelectExam6() {
+	var c chan string
+	select {
+	case c <- "Hello":
+		fmt.Println("sent")
+	default:
+		fmt.Println("default")
+	}
 }

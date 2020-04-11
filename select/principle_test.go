@@ -16,3 +16,9 @@ func ExampleSelectGo() {
 	// len(pollorder)=2, cap(pollorder)=2
 	// len(lockorder)=2, cap(lockorder)=2
 }
+
+func ExampleWriteNilChannle() {
+	WriteNilChannle()
+	// Output:
+	// default
+}

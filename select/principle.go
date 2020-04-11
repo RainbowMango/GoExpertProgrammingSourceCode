@@ -27,3 +27,13 @@ func SelectGo(cas0 *scase, order0 *uint16, ncases int) {
 	lockorder := order1[ncases:][:ncases:ncases]
 	fmt.Printf("len(lockorder)=%d, cap(lockorder)=%d\n", len(lockorder), cap(lockorder))
 }
+
+func WriteNilChannle() {
+	var c chan string
+	select {
+	case c <- "hello": // 向值为nil的管道写数据不会触发panic
+		fmt.Println("true")
+	default:
+		fmt.Println("default")
+	}
+}
