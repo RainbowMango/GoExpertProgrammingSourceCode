@@ -37,3 +37,10 @@ func ByteToString() {
 	b := []byte(s)
 	fmt.Println(b) // [72 101 108 108 111]
 }
+
+func StringIteration() {
+	s := "中国"
+	for index, value := range s {
+		fmt.Printf("index: %d, value: %c\n", index, value)
+	}
+}

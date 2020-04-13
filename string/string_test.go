@@ -45,3 +45,10 @@ func ExampleByteToString() {
 	// Output:
 	// [72 101 108 108 111]
 }
+
+func ExampleStringIteration() {
+	StringIteration()
+	// Output:
+	// index: 0, value: 中
+	// index: 3, value: 国
+}
