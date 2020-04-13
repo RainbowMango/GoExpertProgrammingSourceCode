@@ -25,3 +25,15 @@ func StringConnectSample2() string {
 	s = s + "b"
 	return s
 }
+
+func StringToByte() {
+	b := []byte{'H', 'e', 'l', 'l', 'o'}
+	s := string(b)
+	fmt.Println(s) // Hello
+}
+
+func ByteToString() {
+	s := "Hello"
+	b := []byte(s)
+	fmt.Println(b) // [72 101 108 108 111]
+}

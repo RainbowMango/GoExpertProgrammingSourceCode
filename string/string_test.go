@@ -33,3 +33,15 @@ func BenchmarkStringConnectSample2(b *testing.B) {
 		StringConnectSample2()
 	}
 }
+
+func ExampleStringToByte() {
+	StringToByte()
+	// Output:
+	// Hello
+}
+
+func ExampleByteToString() {
+	ByteToString()
+	// Output:
+	// [72 101 108 108 111]
+}
