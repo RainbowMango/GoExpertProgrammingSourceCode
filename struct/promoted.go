@@ -18,11 +18,14 @@ func EmbeddedFoo() {
 	c := Cat{}
 
 	c.SetName("A")
-	fmt.Printf("Name: %s\n", c.Name)
+	fmt.Printf("Name: %s\n", c.Name) // A
+
+	c.Animal.SetName("a")
+	fmt.Printf("Name: %s\n", c.Name) // a
 
 	c.Animal.Name = "B"
-	fmt.Printf("Name: %s\n", c.Name)
+	fmt.Printf("Name: %s\n", c.Name) // B
 
-	c.Name = "C"
-	fmt.Printf("Name: %s\n", c.Name)
+	c.Name = "b"
+	fmt.Printf("Name: %s\n", c.Name) // b
 }
