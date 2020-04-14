@@ -12,11 +12,6 @@ func (a *Animal) SetName(name string) {
 
 type Cat struct {
 	Animal
-	Color string
-}
-
-func (c *Cat) SetColor(color string) {
-	c.Color = color
 }
 
 func EmbeddedFoo() {
