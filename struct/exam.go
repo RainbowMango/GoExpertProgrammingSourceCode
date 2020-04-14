@@ -11,7 +11,7 @@ import (
 - A：age为私有字段，只能通过类型方法访问
 - B：Name和age字段在可见性上没有区别
 - C：age为私有字段，变量初始化时不能直接赋值
-- D：同一个package中，Name和age字段在可见性上没有区别
+- D：当前package中，Name和age字段在可见性上没有区别
 */
 type People struct {
 	Name string
