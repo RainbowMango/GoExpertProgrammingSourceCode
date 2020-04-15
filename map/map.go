@@ -1,6 +1,8 @@
 package _map
 
-import "fmt"
+import (
+	"fmt"
+)
 
 // MapInitByLiteral 演示使用字面量初始化map
 func MapInitByLiteral() {
@@ -41,6 +43,12 @@ func EmptyMap() {
 	var m1 map[string]int
 	m2 := make(map[string]int)
 
-	fmt.Printf("len(m1) = %d\n", len(m1))
-	fmt.Printf("len(m2) = %d\n", len(m2))
+	fmt.Printf("len(m1) = %d\n", len(m1)) // 0
+	fmt.Printf("len(m2) = %d\n", len(m2)) // 0
+
+	// nil map 可以查询
+	v, exist := m1["apple"]
+	if exist {
+		fmt.Println(v) // 永不可达
+	}
 }

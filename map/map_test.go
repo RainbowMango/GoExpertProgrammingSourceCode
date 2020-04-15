@@ -2,14 +2,14 @@ package _map
 
 func ExampleMapInitByLiteral() {
 	MapInitByLiteral()
-	// Output:
+	// Unordered output:
 	// apple-2
 	// banana-3
 }
 
 func ExampleMapInitByMake() {
 	MapInitByMake()
-	// Output:
+	// Unordered output:
 	// apple-2
 	// banana-3
 }
