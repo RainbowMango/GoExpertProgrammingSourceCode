@@ -1,0 +1,46 @@
+package _map
+
+import "fmt"
+
+// MapInitByLiteral 演示使用字面量初始化map
+func MapInitByLiteral() {
+	m := map[string]int{
+		"apple":  2,
+		"banana": 3,
+	}
+
+	for k, v := range m {
+		fmt.Printf("%s-%d\n", k, v)
+	}
+}
+
+// MapInitByMake 演示使用make初始化map
+func MapInitByMake() {
+	m := make(map[string]int, 10)
+	m["apple"] = 2
+	m["banana"] = 3
+
+	for k, v := range m {
+		fmt.Printf("%s-%d\n", k, v)
+	}
+}
+
+// 演示增删改查
+func MapCRUD() {
+	m := make(map[string]int, 10)
+	m["apple"] = 2         // 添加
+	m["apple"] = 3         // 修改
+	delete(m, "apple")     // 删除
+	v, exist := m["apple"] // 查询
+	if exist {
+		fmt.Printf("apple-%d\n", v)
+	}
+}
+
+func EmptyMap() {
+	var m1 map[string]int
+	m2 := make(map[string]int)
+
+	fmt.Printf("len(m1) = %d\n", len(m1))
+	fmt.Printf("len(m2) = %d\n", len(m2))
+}
