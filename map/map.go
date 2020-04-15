@@ -16,7 +16,7 @@ func MapInitByLiteral() {
 
 // MapInitByMake 演示使用make初始化map
 func MapInitByMake() {
-	m := make(map[string]int, 10)
+	m := make(map[string]int, 10) // 或 m := make(map[string]int)
 	m["apple"] = 2
 	m["banana"] = 3
 
@@ -27,13 +27,13 @@ func MapInitByMake() {
 
 // 演示增删改查
 func MapCRUD() {
-	m := make(map[string]int, 10)
-	m["apple"] = 2         // 添加
-	m["apple"] = 3         // 修改
+	m := make(map[string]string, 10)
+	m["apple"] = "red"     // 添加
+	m["apple"] = "green"   // 修改
 	delete(m, "apple")     // 删除
 	v, exist := m["apple"] // 查询
 	if exist {
-		fmt.Printf("apple-%d\n", v)
+		fmt.Printf("apple-%s\n", v)
 	}
 }
 
