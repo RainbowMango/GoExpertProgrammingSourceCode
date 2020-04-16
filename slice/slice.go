@@ -35,3 +35,11 @@ func SliceInitNew() {
 	s := *new([]int)
 	fmt.Println(s == nil) // true
 }
+
+func SliceAppend() {
+	s := make([]int, 0)
+	s = append(s, 1)              // 添加1个元素
+	s = append(s, 2, 3, 4)        // 添加多个元素
+	s = append(s, []int{5, 6}...) // 添加一个切片
+	fmt.Println(s)                // [1 2 3 4 5 6]
+}
