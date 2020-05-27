@@ -33,3 +33,23 @@ func ChanParamR(ch <-chan int) {
 func ChanParamW(ch chan<- int) {
 	// 只能向管道写入数据
 }
+
+// ReadChanReturnValue 用于测试读取管道时的第二个参数到底是什么含义？
+// 第二个参数代表是否成功读取了数据。（不代表是否关闭）
+func ReadChanReturnValue() {
+	ch := make(chan int, 10)
+	ch <- 1
+	ch <- 2
+	fmt.Printf("length of channel is: %d\n", len(ch))
+
+	_, ok := <-ch
+	fmt.Printf("second return value before channel closed is: %v\n", ok) // true
+
+	close(ch)
+
+	_, ok = <-ch
+	fmt.Printf("second return value after channel(have data) closed is: %v\n", ok) // true
+
+	_, ok = <-ch
+	fmt.Printf("second return value after channel(no data) closed is: %v\n", ok) // false
+}

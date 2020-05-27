@@ -2,6 +2,7 @@ package _select
 
 import (
 	"fmt"
+	"time"
 )
 
 // select 只能做用于管道读写
@@ -40,5 +41,15 @@ func SelectDefault() {
 		fmt.Printf("received\n")
 	default:
 		fmt.Printf("no data found in default\n")
+	}
+}
+
+func SelectChanStillBlock() {
+	ch := make(chan int, 10)
+	select {
+	case _, ok := <-ch: // 此处仍然会阻塞
+		fmt.Printf("never reached if channel is open. %v\n", ok)
+	case <-time.After(10 * time.Millisecond):
+		fmt.Printf("time out")
 	}
 }

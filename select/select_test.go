@@ -54,3 +54,9 @@ func ExampleSelectDefault() {
 	// Output:
 	// no data found in default
 }
+
+func ExampleSelectChanStillBlock() {
+	SelectChanStillBlock()
+	// Output:
+	// time out
+}
