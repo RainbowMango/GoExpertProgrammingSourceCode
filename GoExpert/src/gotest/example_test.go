@@ -1,27 +1,27 @@
 package gotest_test
 
-import "gotest"
+import "github.com/rainbowmango/goexpertprogrammingsourcecode/GoExpert/src/gotest"
 
 // 检测单行输出
 func ExampleSayHello() {
-    gotest.SayHello()
-    // OutPut: Hello World
+	gotest.SayHello()
+	// OutPut: Hello World
 }
 
 // 检测多行输出
 func ExampleSayGoodbye() {
-    gotest.SayGoodbye()
-    // OutPut:
-    // Hello,
-    // goodbye
+	gotest.SayGoodbye()
+	// OutPut:
+	// Hello,
+	// goodbye
 }
 
 // 检测乱序输出
 func ExamplePrintNames() {
-    gotest.PrintNames()
-    // Unordered output:
-    // Jim
-    // Bob
-    // Tom
-    // Sue
+	gotest.PrintNames()
+	// Unordered output:
+	// Jim
+	// Bob
+	// Tom
+	// Sue
 }

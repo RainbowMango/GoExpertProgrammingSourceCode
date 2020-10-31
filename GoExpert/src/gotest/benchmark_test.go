@@ -1,9 +1,10 @@
 package gotest_test
 
 import (
-	"gotest"
 	"testing"
 	"time"
+
+	"github.com/rainbowmango/goexpertprogrammingsourcecode/GoExpert/src/gotest"
 )
 
 func BenchmarkMakeSliceWithoutAlloc(b *testing.B) {
