@@ -6,7 +6,6 @@ package mockreporter
 
 import (
 	gomock "github.com/golang/mock/gomock"
-	reporter "github.com/rainbowmango/goexpertprogrammingsourcecode/gomock/reporter"
 	reflect "reflect"
 )
 
@@ -34,10 +33,10 @@ func (m *MockWeatherReporter) EXPECT() *MockWeatherReporterMockRecorder {
 }
 
 // Report mocks base method
-func (m *MockWeatherReporter) Report(city string) reporter.Weather {
+func (m *MockWeatherReporter) Report(city string) string {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "Report", city)
-	ret0, _ := ret[0].(reporter.Weather)
+	ret0, _ := ret[0].(string)
 	return ret0
 }
 
