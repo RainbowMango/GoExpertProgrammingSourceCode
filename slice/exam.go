@@ -41,14 +41,14 @@ func SlicePrint() {
 关于下面函数的描述，正确的是？
 
 单选：
-- A： 函数操作nil切片会panic
+- A： append函数在操作切片s和s1时发生了扩容
 - B： 编译错误，不可以对切片元素取址
 - C： 函数输出"true"
 - D： 函数输出"false"
 */
 func SliceExtend() {
-	var slice []int
-	s1 := append(slice, 1, 2, 3)
+	s := make([]int, 0, 10)
+	s1 := append(s, 1, 2, 3)
 	s2 := append(s1, 4)
 
 	fmt.Println(&s1[0] == &s2[0])
