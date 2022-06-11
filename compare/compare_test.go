@@ -25,3 +25,10 @@ func ExampleArrayCompare() {
 	// false
 	// true
 }
+
+func ExampleComplexCompare() {
+	ComplexCompare()
+	// Output:
+	// true
+	// false
+}

@@ -74,3 +74,12 @@ func ArrayCompare() {
 	arr2[2] = 3
 	fmt.Println(arr1 == arr2) // 输出 true
 }
+
+func ComplexCompare() {
+	c1 := complex(1, 2)
+	c2 := complex(1, 2)
+	c3 := complex(1, 3)
+
+	fmt.Println(c1 == c2) // 输出 true
+	fmt.Println(c1 == c3) // 输出 false
+}
