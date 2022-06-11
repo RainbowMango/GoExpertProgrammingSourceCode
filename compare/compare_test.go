@@ -12,3 +12,9 @@ func ExampleInterfaceTypeCompare() {
 	// true
 	// false
 }
+
+func ExampleInterfaceAndStructCompare() {
+	InterfaceAndStructCompare()
+	// Output:
+	// true
+}

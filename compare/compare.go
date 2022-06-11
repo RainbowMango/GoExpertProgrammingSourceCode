@@ -57,3 +57,11 @@ func InterfaceTypeCompare() {
 	c1 = Cat{Name: "Donald Duck"} // 伪装的 duck
 	fmt.Println(d1 == c1)         // 输出 false
 }
+
+func InterfaceAndStructCompare() {
+	var animal Animal
+	animal = Duck{Name: "Donald Duck"}
+	var duck Duck
+	duck = Duck{Name: "Donald Duck"}
+	fmt.Println(animal == duck) // 输出 true
+}
