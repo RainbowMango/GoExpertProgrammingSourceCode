@@ -65,3 +65,12 @@ func InterfaceAndStructCompare() {
 	duck = Duck{Name: "Donald Duck"}
 	fmt.Println(animal == duck) // 输出 true
 }
+
+func ArrayCompare() {
+	arr1 := [10]int{1, 2, 3}
+	arr2 := [10]int{1, 2}
+
+	fmt.Println(arr1 == arr2) // 输出 false
+	arr2[2] = 3
+	fmt.Println(arr1 == arr2) // 输出 true
+}

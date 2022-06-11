@@ -18,3 +18,10 @@ func ExampleInterfaceAndStructCompare() {
 	// Output:
 	// true
 }
+
+func ExampleArrayCompare() {
+	ArrayCompare()
+	// Output:
+	// false
+	// true
+}
