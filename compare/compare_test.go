@@ -5,3 +5,10 @@ func ExampleStructTypeCompare() {
 	// Output:
 	// false
 }
+
+func ExampleInterfaceTypeCompare() {
+	InterfaceTypeCompare()
+	// Output:
+	// true
+	// false
+}
